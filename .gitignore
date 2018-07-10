@@ -1,0 +1,17 @@
+.idea
+/venv
+*.pyc
+.env
+*.log
+db.sql
+/si
+/static
+/offline_order
+/gift_order
+/third_order
+.DS_Store
+celerybeat.pid
+celerybeat-schedule
+celerybeat-schedule.db
+dump.rdb
+/violet/__pycache__/*
