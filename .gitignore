@@ -15,3 +15,4 @@ celerybeat-schedule
 celerybeat-schedule.db
 dump.rdb
 /violet/__pycache__/*
+/.idea
