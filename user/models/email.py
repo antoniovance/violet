@@ -3,7 +3,7 @@ from common.models import CommonBase
 from django.db import models
 from .user import User
 
-class email(CommonBase):
+class Email(CommonBase):
     email = models.EmailField(null=False)
     user = models.ForeignKey(User, related_name='emails')
 
