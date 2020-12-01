@@ -6,8 +6,8 @@ from user.models import User
 from .record import Record
 
 class RecordComment(CommonBase):
-    user = models.ForeignKey(User, related_name='comments')
-    record = models.ForeignKey(Record, related_name='comments')
+    user = models.ForeignKey(User, related_name='comments', on_delete=models.CASCADE)
+    record = models.ForeignKey(Record, related_name='comments', on_delete=models.CASCADE)
     content = models.TextField(default='')
     stars = models.DurationField()
 

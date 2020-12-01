@@ -5,7 +5,7 @@ from .user import User
 
 class Email(CommonBase):
     email = models.EmailField(null=False)
-    user = models.ForeignKey(User, related_name='emails')
+    user = models.ForeignKey(User, related_name='emails', on_delete=models.CASCADE)
 
     class Meta:
         verbose_name = '电子邮箱'

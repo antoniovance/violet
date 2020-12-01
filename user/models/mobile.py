@@ -5,7 +5,7 @@ from .user import User
 
 class mobile(CommonBase):
     mobile = models.CharField(max_length=128)
-    user = models.ForeignKey(User, related_name='mobiles')
+    user = models.ForeignKey(User, related_name='mobiles', on_delete=models.CASCADE)
 
     class Meta:
         verbose_name = '手机号'

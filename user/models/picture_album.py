@@ -11,7 +11,7 @@ class UserPictureAlbum(CommonBase):
         (TYPE_OTHER, 'other'),
     )
     name = models.CharField(max_length=256, default='')
-    user = models.ForeignKey(User, related_name='albums')
+    user = models.ForeignKey(User, related_name='albums', on_delete=models.CASCADE)
     type = models.SmallIntegerField(choices=TYPE_CHOICE, default=TYPE_HEADER)
 
     class Meta:
@@ -21,8 +21,8 @@ class UserPictureAlbum(CommonBase):
 
 
 class UserPictureAlbumDetail(CommonBase):
-    user = models.ForeignKey(User, related_name='album_details')
-    album = models.ForeignKey(UserPictureAlbum, related_name='details')
+    user = models.ForeignKey(User, related_name='album_details', on_delete=models.CASCADE)
+    album = models.ForeignKey(UserPictureAlbum, related_name='details', on_delete=models.CASCADE)
     pic_url = models.CharField(max_length=256, default='')
     pic_file = models.ImageField()
     default = models.BooleanField(default=False)
